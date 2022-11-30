@@ -3,3 +3,7 @@
 <%= turbo_frame_tag :post_form do %>
     <%= render 'posts/form', post: @post %>
 <% end %>
+
+<%= turbo_frame_tag :posts do %>
+    <%= render @posts %>
+<% end %>
