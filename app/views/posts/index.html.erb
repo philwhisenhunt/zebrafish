@@ -1,4 +1,5 @@
 <%= turbo_stream_from :posts %>
 
 <%= turbo_frame_tag :post_form do %>
+    <%= render 'posts/form', post: @post %>
 <% end %>
