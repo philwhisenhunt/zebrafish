@@ -60,6 +60,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    
+    respond_to do |format|
+    end
   end
 
   private
