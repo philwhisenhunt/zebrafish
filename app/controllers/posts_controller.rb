@@ -65,6 +65,8 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to posts_path }
         format.json { render :show, status: :created, location: @post }
+      else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: 'posts/form', locals: {post: @post }) }
       end
     end
   end
