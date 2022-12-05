@@ -64,6 +64,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path }
+        format.json { render :show, status: :created, location: @post }
       end
     end
   end
