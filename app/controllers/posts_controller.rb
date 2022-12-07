@@ -67,6 +67,7 @@ class PostsController < ApplicationController
         format.json { render :show, status: :created, location: @post }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: 'posts/form', locals: {post: @post }) }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
