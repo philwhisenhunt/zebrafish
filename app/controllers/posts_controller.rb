@@ -22,6 +22,21 @@ class PostsController < ApplicationController
   end
 
 
+  def create
+    @post = Post.new(post_params)
+    
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_path }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: 'posts/form', locals: {post: @post }) }
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
@@ -45,20 +60,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def create
-    @post = Post.new(post_params)
-    
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to posts_path }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: 'posts/form', locals: {post: @post }) }
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
