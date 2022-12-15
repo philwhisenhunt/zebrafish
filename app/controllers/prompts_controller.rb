@@ -30,6 +30,7 @@ class PromptsController < ApplicationController
         format.html { redirect_to prompts_path }
         format.json { render :show, status: :created, location: @prompt }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: "posts/form", locals: {post: @post}) }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @prompt.errors, status: :unprocessable_entity }
       end
