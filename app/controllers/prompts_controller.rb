@@ -19,6 +19,7 @@ class PromptsController < ApplicationController
 
   # GET /prompts/1/edit
   def edit
+    @prompt = Post.find(params[:id])
   end
 
   # POST /prompts or /prompts.json
