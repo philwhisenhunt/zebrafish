@@ -1,5 +1,5 @@
 <%= turbo_stream_from :posts %>
 
 <%= turbo_frame_tag :post_from do %>
-
+  <%= render "prompts/form", prompt: @prompt %> 
 <% end %>
