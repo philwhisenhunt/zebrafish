@@ -9,7 +9,7 @@ class PromptsController < ApplicationController
 
   # GET /prompts/1 or /prompts/1.json
   def show
-    @prompt = Post.find(params[:id])
+    @prompt = Prompt.find(params[:id])
   end
 
   # GET /prompts/new
@@ -19,7 +19,7 @@ class PromptsController < ApplicationController
 
   # GET /prompts/1/edit
   def edit
-    @prompt = Post.find(params[:id])
+    @prompt = Prompt.find(params[:id])
   end
 
   # POST /prompts or /prompts.json
@@ -31,7 +31,7 @@ class PromptsController < ApplicationController
         format.html { redirect_to prompts_path }
         format.json { render :show, status: :created, location: @prompt }
       else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: "posts/form", locals: {post: @post}) }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@prompt, partial: "prompts/form", locals: {prompt: @prompt}) }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @prompt.errors, status: :unprocessable_entity }
       end
