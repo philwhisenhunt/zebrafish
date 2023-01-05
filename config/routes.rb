@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  post "quizzes/:id/check_answer", to: "quizzes#check_answer", as: "check_answer"
 end

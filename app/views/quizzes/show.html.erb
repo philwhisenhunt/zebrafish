@@ -1,5 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <div>
-  <%= @prompts.first.question %>
+  <%= @prompts.last.question %>
 </div>
+
+<%= form_with(model: Prompt, url: check_answer_path ) do |form| %>
+  <%= form.label :answer_attempt %>
+  <%= form.text_field :answer_attempt %>
+
+  <div>
+    <%= form.submit "Guess" %>
+  </div>
+<% end %>
