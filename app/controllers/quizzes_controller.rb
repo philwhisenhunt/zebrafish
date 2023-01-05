@@ -8,6 +8,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
+    @prompts = Prompt.last(2)
   end
 
   # GET /quizzes/new
