@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ show edit update destroy ]
+  before_action :set_quiz, only: %i[ show edit update destroy check_answer]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -33,6 +33,14 @@ class QuizzesController < ApplicationController
         format.json { render json: @quiz.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def check_answer
+  
+   Prompt.last(1).first.destroy
+   respond_to do |format|
+    format.html { redirect_to quiz_url(@quiz)}
+  end
   end
 
   # PATCH/PUT /quizzes/1 or /quizzes/1.json
