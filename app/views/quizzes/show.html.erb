@@ -1,7 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+TOTAL PROMPTS: 
+<%= @prompts.count %>
 <div>
-  <%= @prompts.last.question %>
+  <%= @prompts.first.question %>
 </div>
 
 <%= form_with(model: Prompt, url: check_answer_path ) do |form| %>
