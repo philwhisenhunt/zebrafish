@@ -8,7 +8,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
-    @prompts = Prompt.last(2)
+    
   end
 
   # GET /quizzes/new
@@ -36,11 +36,16 @@ class QuizzesController < ApplicationController
   end
 
   def check_answer
-  
-   Prompt.last(1).first.destroy
-   respond_to do |format|
-    format.html { redirect_to quiz_url(@quiz)}
-  end
+  # debugger
+  # @prompts.first.
+  #  Prompt.last(1).first.destroy
+  # debugger
+    @prompts = @prompts.drop(1)
+    session['prompt_ids'] = @prompts.map{|prompt| prompt.id}
+    # debugger
+    respond_to do |format|
+      format.html { redirect_to quiz_url(@quiz)}
+    end
   end
 
   # PATCH/PUT /quizzes/1 or /quizzes/1.json
@@ -69,7 +74,17 @@ class QuizzesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quiz
+      # session['prompt_ids'] = nil
       @quiz = Quiz.find(params[:id])
+      # debugger #what is @prompts
+      if session['prompt_ids'].present?
+        @prompts = Prompt.find(session['prompt_ids'])
+      end
+      # debugger
+      #NExt up, try making it do something if it only has one left. 
+      # if !session['prompt_ids'].empty?
+        @prompts = @prompts ||= Prompt.last(2)
+      # end
     end
 
     # Only allow a list of trusted parameters through.
