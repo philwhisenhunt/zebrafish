@@ -8,7 +8,8 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
-    
+    session['prompt_ids'] = @prompts.map{|prompt| prompt.id}
+
   end
 
   # GET /quizzes/new
@@ -76,14 +77,17 @@ class QuizzesController < ApplicationController
     def set_quiz
       # session['prompt_ids'] = nil
       @quiz = Quiz.find(params[:id])
-      # debugger #what is @prompts
-      if session['prompt_ids'].present?
+      # debugger 
+      if session['prompt_ids'].present? && session['prompt_ids'].count > 0
         @prompts = Prompt.find(session['prompt_ids'])
+      elsif session['prompt_ids']&.empty?
+        @prompts = []
+      else
+        @prompts = @prompts ||= Prompt.last(2)
       end
       # debugger
       #NExt up, try making it do something if it only has one left. 
       # if !session['prompt_ids'].empty?
-        @prompts = @prompts ||= Prompt.last(2)
       # end
     end
 
