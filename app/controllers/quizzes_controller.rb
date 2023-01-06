@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ show edit update destroy check_answer]
+  before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -8,7 +8,6 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
-    session['prompt_ids'] = @prompts.map{|prompt| prompt.id}
 
   end
 
@@ -70,6 +69,15 @@ class QuizzesController < ApplicationController
       format.html { redirect_to quizzes_url, notice: "Quiz was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def reset_quiz_questions
+    session['prompt_ids'] = nil
+    @prompts = Prompt.last(2)
+    respond_to do |format|
+      format.html { redirect_to quiz_url(@quiz), notice: "Quiz questions were successfully reset." }
+    end
+
   end
 
   private

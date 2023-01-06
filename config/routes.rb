@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   post "quizzes/:id/check_answer", to: "quizzes#check_answer", as: "check_answer"
+  get "quizzes/:id/reset_quiz_questions", to: "quizzes#reset_quiz_questions", as: "reset_quiz_questions"
 end

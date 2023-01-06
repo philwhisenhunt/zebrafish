@@ -1,16 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-TOTAL PROMPTS: 
-<%= @prompts.count %>
-<div>
-  <%= @prompts.first.question %>
-</div>
-
-<%= form_with(model: Prompt, url: check_answer_path ) do |form| %>
-  <%= form.label :answer_attempt %>
-  <%= form.text_field :answer_attempt %>
-
+<% if @prompts.count > 0 %>
+  TOTAL PROMPTS: 
+  <%= @prompts.count %>
   <div>
-    <%= form.submit "Guess" %>
+    <%= @prompts.first.question %>
   </div>
+
+  <%= form_with(model: Prompt, url: check_answer_path ) do |form| %>
+    <%= form.label :answer_attempt %>
+    <%= form.text_field :answer_attempt %>
+
+    <div>
+      <%= form.submit "Guess" %>
+    </div>
+  <% end %>
+<% else %>
+<div>
+  Looks like you've completed all the questions.
+  <%= link_to "Reset Quiz Questions", reset_quiz_questions_path(@quiz) %>
+
+</div>
 <% end %>
