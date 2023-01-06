@@ -36,13 +36,10 @@ class QuizzesController < ApplicationController
   end
 
   def check_answer
-  # debugger
-  # @prompts.first.
-  #  Prompt.last(1).first.destroy
-  # debugger
+
     @prompts = @prompts.drop(1)
     session['prompt_ids'] = @prompts.map{|prompt| prompt.id}
-    # debugger
+  
     respond_to do |format|
       format.html { redirect_to quiz_url(@quiz)}
     end
@@ -83,9 +80,7 @@ class QuizzesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quiz
-      # session['prompt_ids'] = nil
       @quiz = Quiz.find(params[:id])
-      # debugger 
       if session['prompt_ids'].present? && session['prompt_ids'].count > 0
         @prompts = Prompt.find(session['prompt_ids'])
       elsif session['prompt_ids']&.empty?
@@ -93,10 +88,6 @@ class QuizzesController < ApplicationController
       else
         @prompts = @prompts ||= Prompt.last(2)
       end
-      # debugger
-      #NExt up, try making it do something if it only has one left. 
-      # if !session['prompt_ids'].empty?
-      # end
     end
 
     # Only allow a list of trusted parameters through.
