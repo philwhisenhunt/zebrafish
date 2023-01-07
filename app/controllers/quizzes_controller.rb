@@ -107,6 +107,5 @@ class QuizzesController < ApplicationController
 
     def reset_score
       session['current_score'] = 0
-      system("say reset")
     end
 end
