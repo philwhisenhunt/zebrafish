@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   resources :quizzes
   resources :prompts
   resources :posts
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  root "home#index"
   post "quizzes/:id/check_answer", to: "quizzes#check_answer", as: "check_answer"
   get "quizzes/:id/reset_quiz_questions", to: "quizzes#reset_quiz_questions", as: "reset_quiz_questions"
 end
