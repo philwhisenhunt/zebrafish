@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions]
   before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
+  before_action :set_score, only: %i[show check_answer reset_quiz_questions]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -71,11 +72,12 @@ class QuizzesController < ApplicationController
 
   def reset_quiz_questions
     session['prompt_ids'] = nil
+    reset_score
     @prompts = Prompt.last(2)
+   
     respond_to do |format|
       format.html { redirect_to quiz_url(@quiz), notice: "Quiz questions were successfully reset." }
     end
-
   end
 
   private
@@ -94,8 +96,17 @@ class QuizzesController < ApplicationController
       end
     end
 
+    def set_score
+      @score = session['current_score'] || 0
+    end
+
     # Only allow a list of trusted parameters through.
     def quiz_params
       params.require(:quiz).permit(:name)
+    end
+
+    def reset_score
+      session['current_score'] = 0
+      system("say reset")
     end
 end
