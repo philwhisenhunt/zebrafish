@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions]
+  before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -81,6 +82,9 @@ class QuizzesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_quiz
       @quiz = Quiz.find(params[:id])
+    end
+
+    def set_prompts
       if session['prompt_ids'].present? && session['prompt_ids'].count > 0
         @prompts = Prompt.find(session['prompt_ids'])
       elsif session['prompt_ids']&.empty?
