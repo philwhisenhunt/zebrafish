@@ -39,9 +39,17 @@ class QuizzesController < ApplicationController
 
   def check_answer
 
+    @prompt = @prompts.first
+    @score = session['current_score']
+    # debugger
+    if @prompt.check_answer(params[:prompt][:answer_attempt])
+      @score += 1
+    end
+
     @prompts = @prompts.drop(1)
     session['prompt_ids'] = @prompts.map{|prompt| prompt.id}
   
+    session['current_score'] = @score
     respond_to do |format|
       format.html { redirect_to quiz_url(@quiz)}
     end
