@@ -4,9 +4,9 @@
 
 <div id="quizzes">
   <% @quizzes.each do |quiz| %>
-    <%= render quiz %>
+   
     <p>
-      <%= link_to "Take this quiz", quiz %>
+      <%= link_to "#{quiz.name}", quiz %>
     </p>
   <% end %>
 </div>
