@@ -6,7 +6,7 @@ class Prompt < ApplicationRecord
 
     def check_answer(answer_attempt)
       
-        if self.answer == answer_attempt
+        if self.answer.downcase == answer_attempt.downcase
             return true 
         else
             return false
