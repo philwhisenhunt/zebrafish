@@ -1,20 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <% if @prompts.count > 0 %>
-  Remaining Prompts: 
-  <%= @prompts.count %>
-  <div>
-    <%= @prompts.first.question %>
-  </div>
-
-  <%= form_with(model: Prompt, url: check_answer_path ) do |form| %>
-    <%= form.label :answer_attempt %>
-    <%= form.text_field :answer_attempt %>
-
-    <div>
-      <%= form.submit "Guess" %>
-    </div>
-  <% end %>
+  <%= render "question_partial" %>
 <% else %>
   <%= render "completed" %>
 <% end %>
