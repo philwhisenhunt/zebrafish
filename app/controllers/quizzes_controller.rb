@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions]
+  before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions activate]
   before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
   before_action :set_score, only: %i[show check_answer reset_quiz_questions]
 
@@ -86,6 +86,10 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quiz_url(@quiz), notice: "Quiz questions were successfully reset." }
     end
+  end
+
+  def activate
+    @quiz.activate
   end
 
   private
