@@ -92,6 +92,10 @@ class QuizzesController < ApplicationController
     @quiz.activate
   end
 
+  def deactivate
+    @quiz.deactivate
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quiz
