@@ -6,4 +6,9 @@ class Quiz < ApplicationRecord
         self.save!
     end
 
+    def deactivate
+        self.status = "unactive"
+        self.save!
+    end
+
 end
