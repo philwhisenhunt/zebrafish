@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root "home#index"
   post "quizzes/:id/check_answer", to: "quizzes#check_answer", as: "check_answer"
   get "quizzes/:id/reset_quiz_questions", to: "quizzes#reset_quiz_questions", as: "reset_quiz_questions"
+  get "quizzes/:id/activate", to: "quizzes#activate", as: "activate_quiz"
 end
