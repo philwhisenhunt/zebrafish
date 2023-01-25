@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions activate]
+  before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions activate add_questions]
   before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
   before_action :set_score, only: %i[show check_answer reset_quiz_questions]
 
@@ -94,6 +94,11 @@ class QuizzesController < ApplicationController
 
   def deactivate
     @quiz.deactivate
+  end
+
+  def add_questions
+    @prompt = Prompt.new
+    
   end
 
   private

@@ -21,11 +21,20 @@
     <%= form.text_area :answer %>
   </div>
 
-  <div>
-    <%= form.label :quiz, style: "display: block" %>
-    <%= form.number_field :quiz_id, :value => Quiz.last.id %>
-  </div>
 
+
+  <% if @quiz.present? %>
+    <div>
+      <%= form.label :quiz, style: "display: block" %>
+      <%= form.number_field :quiz_id, :value => @quiz.id %>
+    </div>
+  <% else %>
+    <div>
+      <%= form.label :quiz, style: "display: block" %>
+      <%= form.number_field :quiz_id, :value => Quiz.first.id %>
+    </div>
+  <% end %>
+  
   <div>
     <%= form.submit %>
   </div>

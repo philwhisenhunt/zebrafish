@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "quizzes/:id/check_answer", to: "quizzes#check_answer", as: "check_answer"
   get "quizzes/:id/reset_quiz_questions", to: "quizzes#reset_quiz_questions", as: "reset_quiz_questions"
   get "quizzes/:id/activate", to: "quizzes#activate", as: "activate_quiz"
+  get "quizzes/:id/add_questions", to: "quizzes#add_questions", as: "add_questions_quiz"
 end
