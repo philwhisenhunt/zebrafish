@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :quiz, style: "display: block" %>
+    <%= form.number_field :quiz_id, :value => Quiz.last.id %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
