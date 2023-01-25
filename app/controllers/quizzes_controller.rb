@@ -108,7 +108,7 @@ class QuizzesController < ApplicationController
       elsif session['prompt_ids']&.empty?
         @prompts = []
       else
-        @prompts = @prompts ||= Prompt.last(2)
+        @prompts = @prompts ||= @quiz.prompts
       end
     end
 
