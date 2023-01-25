@@ -2,6 +2,8 @@
 
 <% if @prompts.count > 0 %>
   <%= render "question_partial" %>
+<% elsif @quiz.prompts.count == 0 %>
+  <%= render "no_questions" %>
 <% else %>
   <%= render "completed" %>
 <% end %>
