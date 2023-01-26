@@ -28,7 +28,7 @@ class PromptsController < ApplicationController
 
     respond_to do |format|
       if @prompt.save
-        format.html { redirect_to prompts_path }
+        format.html { redirect_to add_questions_quiz_path(@prompt.quiz), notice: "Question added successfully!" }
         format.json { render :show, status: :created, location: @prompt }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(@prompt, partial: "prompts/form", locals: {prompt: @prompt}) }
