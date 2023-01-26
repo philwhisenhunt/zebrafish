@@ -1,3 +1,7 @@
+<p style="color: green"><%= notice %></p>
+There are currently: <b><%= @quiz.prompts.count %></b> questions in this quiz
+<br>
 Add your questions for quiz <%= @quiz.id %>
-
+<p></p>
+<br>
 <%= render "prompts/form", prompt: @prompt %>
