@@ -2,6 +2,6 @@
 There are currently: <b><%= @quiz.prompts.count %></b> questions in this quiz
 <br>
 Add your questions for quiz <%= @quiz.id %>
-<p></p>
+<p><%= link_to "Take this quiz", quiz_path(@quiz) %></p>
 <br>
 <%= render "prompts/form", prompt: @prompt %>
