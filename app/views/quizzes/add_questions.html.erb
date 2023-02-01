@@ -5,3 +5,8 @@ Add your questions for quiz <%= @quiz.id %>
 <p><%= link_to "Take this quiz", quiz_path(@quiz) %></p>
 <br>
 <%= render "prompts/form", prompt: @prompt %>
+
+<b>Current Questions</b>
+<%= turbo_frame_tag :prompts do %>
+    <%= render @prompts %>
+<%= end %>
