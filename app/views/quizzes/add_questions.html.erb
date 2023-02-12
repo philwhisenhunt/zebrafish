@@ -13,5 +13,5 @@ Add your questions for quiz <%= @quiz.id %>
 
 <b>Current Questions for this quiz</b>
 <%= turbo_frame_tag :prompts do %>
-    <%= render "prompts/prompt" %>
+    <%= render "prompts/prompt", prompts: :prompts %>
 <% end %>
