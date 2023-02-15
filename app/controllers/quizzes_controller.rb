@@ -98,6 +98,7 @@ class QuizzesController < ApplicationController
 
   def add_questions
     @prompt = Prompt.new
+    @prompts = Prompt.all.order(create_at: :desc)
     
   end
 
