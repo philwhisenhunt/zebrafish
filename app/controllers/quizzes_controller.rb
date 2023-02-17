@@ -5,7 +5,7 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes or /quizzes.json
   def index
-    @quizzes = Quiz.where(status: "active")
+    @quizzes = Quiz.all
   end
 
   # GET /quizzes/1 or /quizzes/1.json
@@ -98,7 +98,7 @@ class QuizzesController < ApplicationController
 
   def add_questions
     @prompt = Prompt.new
-    @prompts = Prompt.all.order(create_at: :desc)
+    @prompts = @quiz.prompts.order(create_at: :desc)
     
   end
 
