@@ -1,9 +1,11 @@
 <%= turbo_stream_from :prompts %>
 
 <p style="color: green"><%= notice %></p>
-There are currently: <b><%= @quiz.prompts.count %></b> questions in this quiz
+<b><%= @quiz.name %></b>
 <br>
-Add your questions for quiz <%= @quiz.id %>
+There are currently <b><%= @quiz.prompts.count %></b> questions in this quiz
+<br>
+
 <p><%= link_to "Take this quiz", quiz_path(@quiz) %></p>
 <br>
 
