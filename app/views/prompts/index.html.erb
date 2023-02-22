@@ -1,6 +1,6 @@
 <%= turbo_stream_from :prompts %>
 
-<%= turbo_frame_tag :prompt_from do %>
+<%= turbo_frame_tag :prompt_form do %>
   <%= render "prompts/form", prompt: @prompt %> 
 <% end %>
 
