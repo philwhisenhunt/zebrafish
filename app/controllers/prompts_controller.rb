@@ -28,6 +28,7 @@ class PromptsController < ApplicationController
 
     respond_to do |format|
       if @prompt.save
+        system('say ok')
         format.html { redirect_to add_questions_quiz_path(@prompt.quiz), notice: "Question added successfully!" }
         format.json { render :show, status: :created, location: @prompt }
       else
