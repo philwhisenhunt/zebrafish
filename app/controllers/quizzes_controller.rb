@@ -2,7 +2,7 @@ class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions activate add_questions]
   before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
   before_action :set_score, only: %i[show check_answer reset_quiz_questions]
-  before_action :authenticate_user!, only: %i[show]
+  before_action :authenticate_user!, only: %i[create edit update new]
 
   # GET /quizzes or /quizzes.json
   def index
