@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   # options are a join model or just starting with the basics of connecting a quiz to a creator.
   # to add a creator we would just need a migration
+
+  # Methods to add
+  # confirm - email address is confirmed
+  # lock - prevent a user from being able to login
 end
