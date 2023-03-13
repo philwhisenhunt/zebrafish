@@ -13,4 +13,8 @@ class Prompt < ApplicationRecord
         end
         
     end
+
+    # Now we need to connect quizzes and prompts with a join model
+    # These go in alphabetical order
+    # So it would be PromptQuiz as the join model name
 end
