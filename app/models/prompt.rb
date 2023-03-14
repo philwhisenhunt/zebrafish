@@ -17,4 +17,6 @@ class Prompt < ApplicationRecord
     # Now we need to connect quizzes and prompts with a join model
     # These go in alphabetical order
     # So it would be PromptQuiz as the join model name
+
+    # We can also connect with users as QuizzesUsers
 end
