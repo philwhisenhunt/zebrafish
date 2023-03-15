@@ -19,4 +19,7 @@ class Prompt < ApplicationRecord
     # So it would be PromptQuiz as the join model name
 
     # We can also connect with users as QuizzesUsers
+
+    # add it with
+    # create_join_table :prompts, :users
 end
