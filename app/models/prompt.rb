@@ -21,5 +21,5 @@ class Prompt < ApplicationRecord
     # We can also connect with users as QuizzesUsers
 
     # add it with
-    # create_join_table :prompts, :users
+    # create_join_table :quizzes, :users
 end
