@@ -22,4 +22,7 @@ class Prompt < ApplicationRecord
 
     # add it with
     # create_join_table :quizzes, :users
+
+    #But then how to make it so that users subscribe to a quiz? And quizzes have subscribers?
+    #generate a join model and a table? Or just one and the other comes with it?
 end
