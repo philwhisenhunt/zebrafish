@@ -25,4 +25,19 @@ class Prompt < ApplicationRecord
 
     #But then how to make it so that users subscribe to a quiz? And quizzes have subscribers?
     #generate a join model and a table? Or just one and the other comes with it?
+
+    # Tried rails g migration CreateJoinTableQuizzesUsers quizzes users
+
+    # and made:
+
+    #class CreateJoinTableQuizzesUsers < ActiveRecord::Migration[7.0]
+#   def change
+#     create_join_table :quizzes, :users do |t|
+#       # t.index [:quiz_id, :user_id]
+#       # t.index [:user_id, :quiz_id]
+#     end
+#   end
+# end
+
+# but that is not quite what I need. I think I should add a model here too
 end
