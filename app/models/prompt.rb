@@ -40,4 +40,6 @@ class Prompt < ApplicationRecord
 # end
 
 # but that is not quite what I need. I think I should add a model here too
+
+# rails g model QuizzesUsers quizzes users
 end
