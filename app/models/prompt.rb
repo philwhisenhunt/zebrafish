@@ -42,4 +42,6 @@ class Prompt < ApplicationRecord
 # but that is not quite what I need. I think I should add a model here too
 
 # rails g model QuizzesUsers quizzes users
+
+# the rails guide seems to be pointing me towards a has_and_belongs_to_many association
 end
