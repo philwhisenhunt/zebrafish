@@ -44,4 +44,7 @@ class Prompt < ApplicationRecord
 # rails g model QuizzesUsers quizzes users
 
 # the rails guide seems to be pointing me towards a has_and_belongs_to_many association
+
+# this article seems to make has_many_through make more sense:
+# https://stackoverflow.com/questions/35305439/create-join-table-using-migrations-or-models
 end
