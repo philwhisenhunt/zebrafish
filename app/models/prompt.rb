@@ -47,4 +47,9 @@ class Prompt < ApplicationRecord
 
 # this article seems to make has_many_through make more sense:
 # https://stackoverflow.com/questions/35305439/create-join-table-using-migrations-or-models
+
+#things I want to be able to do:
+# show me all the quizzes a user made
+# show me all the users that have take a quiz
+# everytime a user takes a quiz, record it as a session. (Sessions can be incomplete)
 end
