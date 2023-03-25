@@ -52,4 +52,7 @@ class Prompt < ApplicationRecord
 # show me all the quizzes a user made
 # show me all the users that have take a quiz
 # everytime a user takes a quiz, record it as a session. (Sessions can be incomplete)
+# a quiz can have many subscribers
+# a quiz can have many prompts
+# change prompts to questions? but it is not just a question, but also an answer.
 end
