@@ -55,4 +55,7 @@ class Prompt < ApplicationRecord
 # a quiz can have many subscribers
 # a quiz can have many prompts
 # change prompts to questions? but it is not just a question, but also an answer.
+
+# I'm leaning toward a join model, since that will allow me to add methods if I ever need to. Next step
+# is to create that join model and the table to go with it
 end
