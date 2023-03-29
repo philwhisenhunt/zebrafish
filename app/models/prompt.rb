@@ -14,6 +14,12 @@ class Prompt < ApplicationRecord
         
     end
 
+    # add an alternative answer? Where two things could be accepted
+
+    def check_for_alternative_answers
+        self.answer.downcase == answer_attempt.downcase || self.answer.alternatives.contains?(answer_attempt)
+    end
+
     # Now we need to connect quizzes and prompts with a join model
     # These go in alphabetical order
     # So it would be PromptQuiz as the join model name
