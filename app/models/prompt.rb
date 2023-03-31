@@ -18,6 +18,9 @@ class Prompt < ApplicationRecord
 
     def check_for_alternative_answers
         self.answer.downcase == answer_attempt.downcase || self.answer.alternatives.contains?(answer_attempt)
+
+        # add alternatives as an attribute. Make it an array of all possible alternatives?
+        # Then add a way to have the array be updated. The question there is how to remove from the array when it is in the middle
     end
 
     # Now we need to connect quizzes and prompts with a join model
