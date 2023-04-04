@@ -11,8 +11,11 @@ class QuizzesController < ApplicationController
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
+    # show the specific quizzes that are available to a user
 
   end
+
+  #make a my_quizzes action, which shows the created quizzes
 
   # GET /quizzes/new
   def new
