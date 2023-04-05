@@ -7,11 +7,14 @@ class QuizzesController < ApplicationController
   # GET /quizzes or /quizzes.json
   def index
     @quizzes = Quiz.all
+
+    # instead, show the specific quizzes that are available to a user
+    # @quizzes = QuizzesUsers.where(user_id: current_user.id)
   end
 
   # GET /quizzes/1 or /quizzes/1.json
   def show
-    # show the specific quizzes that are available to a user
+    
 
   end
 
