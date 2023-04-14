@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
 
     # instead, show the specific quizzes that are available to a user
     # @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
-    # subscribed_quizzes = QuizzesUsers.where(subscriber_id: current_user.id)
+    # @subscribed_quizzes = QuizzesUsers.where(subscriber_id: current_user.id)
 
     
   end
