@@ -12,6 +12,7 @@ class QuizzesController < ApplicationController
     # @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
     # @subscribed_quizzes = QuizzesUsers.where(subscriber_id: current_user.id)
 
+    # @all_quizzes = Quiz.all
     
   end
 
