@@ -13,6 +13,8 @@ class QuizzesController < ApplicationController
     # @subscribed_quizzes = QuizzesUsers.where(subscriber_id: current_user.id)
 
     # @all_quizzes = Quiz.all
+    # Or could just link to the place that has all the quizzes.
+    # That might be cleaner
     
   end
 
