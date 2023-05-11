@@ -13,10 +13,7 @@ class QuizzesController < ApplicationController
 
     @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
 
-    # @all_quizzes = Quiz.all
-    # Or could just link to the place that has all the quizzes.
-    # That might be cleaner
-    
+    # Next up, make a way to subscribe to a quiz
   end
 
   # GET /quizzes/1 or /quizzes/1.json
