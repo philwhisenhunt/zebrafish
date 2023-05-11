@@ -12,7 +12,7 @@ class QuizzesController < ApplicationController
     @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
    # debugger
    # we need to actually create some QuizzesUsers, and we also need to check for the name of the columns
-    @subscribed_quizzes = QuizzesUsers.where(subscriber_id: current_user.id)
+    @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
 
     # @all_quizzes = Quiz.all
     # Or could just link to the place that has all the quizzes.
