@@ -115,8 +115,9 @@ class QuizzesController < ApplicationController
 
   def subscribe
     # set the user
-    # set the quiz
+    @current_user = current_user
     # Create a new QuizzesUser and set the user and quiz
+    quizzes_user = QuizzesUsers.new(quiz: @quiz, user: @current_user)
   end
 
   private
