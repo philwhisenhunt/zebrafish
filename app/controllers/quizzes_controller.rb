@@ -113,6 +113,12 @@ class QuizzesController < ApplicationController
     
   end
 
+  def subscribe
+    # set the user
+    # set the quiz
+    # Create a new QuizzesUser and set the user and quiz
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quiz
