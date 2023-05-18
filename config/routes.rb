@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get "quizzes/:id/reset_quiz_questions", to: "quizzes#reset_quiz_questions", as: "reset_quiz_questions"
   get "quizzes/:id/activate", to: "quizzes#activate", as: "activate_quiz"
   get "quizzes/:id/add_questions", to: "quizzes#add_questions", as: "add_questions_quiz"
+  get "quizzes/:id/subscribe", to: "quizzes#subscribe", as: "subscribe"
 end
