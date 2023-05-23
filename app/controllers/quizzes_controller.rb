@@ -118,7 +118,13 @@ class QuizzesController < ApplicationController
     @current_user = current_user
     # Create a new QuizzesUser and set the user and quiz
     quizzes_user = QuizzesUsers.new(quiz: @quiz, user: @current_user)
-    quizzes_user.save!
+    if quizzes_user.save!
+      # render success
+
+    else
+      # render same page with an error message
+
+    end
   end
 
   private
