@@ -120,7 +120,7 @@ class QuizzesController < ApplicationController
     quizzes_user = QuizzesUsers.new(quiz: @quiz, user: @current_user)
     if quizzes_user.save!
       # render success
-
+      # or is there a way to do this with json, so that we only get the green checkmark
     else
       # render same page with an error message
 
