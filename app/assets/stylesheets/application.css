@@ -24,3 +24,7 @@ body {
     width: 50%;
     padding: 10px;
 }
+
+.right-side-header {
+    text-align: right;
+}
