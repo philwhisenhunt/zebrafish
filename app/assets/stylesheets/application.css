@@ -28,3 +28,7 @@ body {
 .right-side-header {
     text-align: right;
 }
+
+.left-side-header {
+    text-align: left;
+}
