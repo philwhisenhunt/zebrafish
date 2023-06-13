@@ -35,3 +35,7 @@ body {
 .left-side-header {
     text-align: left;
 }
+
+.trending {
+    border: 3px solid blue;
+}
