@@ -19,6 +19,7 @@
     text-align: center;
     max-width: 100em;
     border: 3px solid black;
+    padding: 2px;
 }
 
 body {
@@ -30,6 +31,10 @@ body {
 
 .right-side-header {
     text-align: right;
+    max-width: 70%;
+    border: 3px solid green;
+    float: right;
+
 }
 
 .left-side-header {
@@ -41,4 +46,16 @@ body {
     text-align: left;
     max-width: 50%;
     margin: auto;
+}
+
+.left-side-header {
+    font-size: 3em;
+    border: 3px solid green;
+    max-width: 30%;
+    float: left;
+}
+
+.banner-top {
+    margin: 2px;
+    padding: 2px;
 }
