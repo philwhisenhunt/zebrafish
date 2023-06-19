@@ -60,4 +60,6 @@ body {
     padding: 2px;
 }
 
-header {}
+header {
+    font-size: 35px;
+}
