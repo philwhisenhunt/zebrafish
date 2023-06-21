@@ -63,4 +63,7 @@ body {
 header {
     font-size: 35px;
     text-align: center;
+    padding: 30px;
+    color: white;
+    background-color: brown;
 }
