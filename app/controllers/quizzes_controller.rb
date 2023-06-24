@@ -9,9 +9,11 @@ class QuizzesController < ApplicationController
     @quizzes = Quiz.all
 
     # instead, show the specific quizzes that are available to a user
-    @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
+    if current_user.present?
+      @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
 
-    @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
+      @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
+    end
 
     # Next up, make a way to subscribe to a quiz
   end
