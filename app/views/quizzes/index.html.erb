@@ -1,15 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Quizzes you've made</h1>
-
-<div id="quizzes">
-  <% @owned_quizzes.each do |quiz| %>
-   
-    <p>
-      <%= link_to "#{quiz.name}", quiz %>
-    </p>
-  <% end %>
-</div>
+<% if @owned_quizzes.present? %>
+  <div id="quizzes">
+    <% @owned_quizzes.each do |quiz| %>
+    
+      <p>
+        <%= link_to "#{quiz.name}", quiz %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 
 <h1>Quizzes you've subscribed to</h1>
 
