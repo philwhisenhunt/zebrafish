@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Quizzes you've made</h1>
 <% if @owned_quizzes.present? %>
+  <h1>Quizzes you've made</h1>
   <div id="quizzes">
     <% @owned_quizzes.each do |quiz| %>
     
@@ -12,17 +12,18 @@
   </div>
 <% end %>
 
-<h1>Quizzes you've subscribed to</h1>
+<% if @subscribed_quizzes.present? %>
+  <h1>Quizzes you've subscribed to</h1>
 
-<div id="quizzes">
-  <% @subscribed_quizzes.each do |quiz| %>
-   
-    <p>
-      <%= link_to "#{quiz.name}", quiz %>
-    </p>
-  <% end %>
-</div>
-
+  <div id="quizzes">
+    <% @subscribed_quizzes.each do |quiz| %>
+    
+      <p>
+        <%= link_to "#{quiz.name}", quiz %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 <h1>All Quizzes</h1>
 
 <div id="quizzes">
