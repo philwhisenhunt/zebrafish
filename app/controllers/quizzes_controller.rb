@@ -2,7 +2,7 @@ class QuizzesController < ApplicationController
   before_action :set_quiz, only: %i[ show edit update destroy check_answer reset_quiz_questions activate add_questions subscribe]
   before_action :set_prompts, only: %i[show check_answer reset_quiz_questions]
   before_action :set_score, only: %i[show check_answer reset_quiz_questions]
-  before_action :authenticate_user!, only: %i[create edit update new]
+  before_action :authenticate_user!, only: %i[create edit update new subscribe]
 
   # GET /quizzes or /quizzes.json
   def index
@@ -116,6 +116,7 @@ class QuizzesController < ApplicationController
   end
 
   def subscribe
+
     # set the user
     @current_user = current_user
     # Create a new QuizzesUser and set the user and quiz
