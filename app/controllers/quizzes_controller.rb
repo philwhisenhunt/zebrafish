@@ -116,7 +116,6 @@ class QuizzesController < ApplicationController
   end
 
   def subscribe
-
     # set the user
     @current_user = current_user
     # Create a new QuizzesUser and set the user and quiz
@@ -124,7 +123,7 @@ class QuizzesController < ApplicationController
     if quizzes_user.save!
       # render success
       # or is there a way to do this with json, so that we only get the green checkmark
-      format.json { render json: succuess, status: :ok }
+      format.json { render json: success, status: :ok }
 
     else
       # render same page with an error message
