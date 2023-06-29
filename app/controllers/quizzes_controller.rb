@@ -127,6 +127,7 @@ class QuizzesController < ApplicationController
 
     else
       # render same page with an error message
+      format.html { render :new, status: :unprocessable_entity }
 
     end
   end
