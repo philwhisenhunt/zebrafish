@@ -30,7 +30,7 @@
   <% @quizzes.each do |quiz| %>
    
     <p>
-      <%= link_to "#{quiz.name}", quiz %> <%= link_to "Subscribe", "#" %>
+      <%= link_to "#{quiz.name}", quiz %> <%= link_to "Subscribe", subscribe_path(quiz) %>
     </p>
   <% end %>
 </div>
