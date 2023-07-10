@@ -124,6 +124,7 @@ class QuizzesController < ApplicationController
       # render success
       # or is there a way to do this with json, so that we only get the green checkmark
       format.json { render json: success, status: :ok }
+      format.html { redirect_to :index, notice: "Subscribed successfully!"}
 
     else
       # render same page with an error message
