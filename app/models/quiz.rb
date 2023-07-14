@@ -11,4 +11,8 @@ class Quiz < ApplicationRecord
         self.save!
     end
 
+    def subscribed?
+        false
+    end
+
 end
