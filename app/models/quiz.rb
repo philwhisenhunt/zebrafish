@@ -13,6 +13,7 @@ class Quiz < ApplicationRecord
 
     def subscribed?
         false
+        QuizzesUser.where(quiz: self, user: current_user).first
     end
 
 end
