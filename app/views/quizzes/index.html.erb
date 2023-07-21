@@ -31,7 +31,7 @@
    
     <p>
       <%= link_to "#{quiz.name}", quiz %> 
-      <% unless quiz.subscribed?%>
+      <% unless current_user && quiz.subscribed?%>
         <%= link_to "Subscribe", subscribe_path(quiz) %>
       <% end %>
     </p>
