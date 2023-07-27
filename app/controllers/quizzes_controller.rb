@@ -12,7 +12,9 @@ class QuizzesController < ApplicationController
     if current_user.present?
       @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
       # @owned_quizzes = @owned_quizzes.each(&quiz)
-      #  the above needs to be actualy quizzes, not join model..
+      # Quiz.joins(:QuizzesUsers: [{Quiz.first}])
+      # @owned_quizzes = Quiz.joins(quizzes_users: {user: current_user})
+      #  the above needs to be actually quizzes, not join model..
 
       @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
     end
