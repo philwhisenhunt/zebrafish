@@ -1,6 +1,7 @@
 class Quiz < ApplicationRecord
     has_many :prompts
     has_many :quizzes_users
+    has_many :users, through: :quizzes_users
 
     def activate
         self.status = "active"
