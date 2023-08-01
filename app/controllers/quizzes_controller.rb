@@ -11,6 +11,11 @@ class QuizzesController < ApplicationController
     # instead, show the specific quizzes that are available to a user
     if current_user.present?
       @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
+      # this worked for getting user:
+      # QuizzesUsers.where(user_id: 1).collect(&:user)
+
+      # but this didn't work for getting quizzes:
+      # QuizzesUsers.where(user_id: 1).collect(&:quiz)
       # @owned_quizzes = @owned_quizzes.each(&quiz)
       # Quiz.joins(:QuizzesUsers: [{Quiz.first}])
       # @owned_quizzes = Quiz.joins(quizzes_users: {user: current_user})
