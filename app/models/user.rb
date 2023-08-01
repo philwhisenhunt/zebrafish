@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :quizzes_users
+  has_many :quizzes, through: :quizzes_users
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
