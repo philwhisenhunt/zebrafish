@@ -22,6 +22,9 @@ class QuizzesController < ApplicationController
       # @owned_quizzes = Quiz.joins(user: current_user)
       #  the above needs to be actually quizzes, not join model..
 
+      # tried:
+      # Quiz.joins(quizzes_users).where(user_id: 1)
+
       @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
     end
 
