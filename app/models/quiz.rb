@@ -7,6 +7,10 @@ class Quiz < ApplicationRecord
     # a quiz has many subscribers
     # a subscriber has many quizzes
     # a user has many quizzes through subscribers
+    
+    # or
+    # a user has many subscriptions 
+    # a user has many quizzes through subscriptions
 
     def activate
         self.status = "active"
