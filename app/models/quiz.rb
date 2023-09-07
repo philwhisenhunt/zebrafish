@@ -12,6 +12,10 @@ class Quiz < ApplicationRecord
     # a user has many subscriptions 
     # a user has many quizzes through subscriptions
 
+    # Next up:
+    # Create subscriptions model
+    # Create quizzesSubscription join table
+
     def activate
         self.status = "active"
         self.save!
