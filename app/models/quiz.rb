@@ -16,7 +16,7 @@ class Quiz < ApplicationRecord
     # Create subscriptions model
     # Create quizzesSubscription join table
     # User.quizzesSubscriptions should allow us to get the quizzes via a joins table
-    # Quiz.joins(quizzesSubscriptions.where(quizzesSubscriptions: {user_id: @user.id)})
+    # Quiz.joins(quizzesSubscriptions.where(quizzesSubscriptions: {user_id: @user.id}))
 
     def activate
         self.status = "active"
