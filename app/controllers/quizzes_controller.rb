@@ -11,21 +11,7 @@ class QuizzesController < ApplicationController
     # instead, show the specific quizzes that are available to a user
     if current_user.present?
       @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
-      # this worked for getting user:
-      # QuizzesUsers.where(user_id: 1).collect(&:user)
-
-      # but this didn't work for getting quizzes:
-      # QuizzesUsers.where(user_id: 1).collect(&:quiz)
-      # @owned_quizzes = @owned_quizzes.each(&quiz)
-      # Quiz.joins(:QuizzesUsers: [{Quiz.first}])
-      # @owned_quizzes = Quiz.joins(quizzes_users: {user: current_user})
-      # @owned_quizzes = Quiz.joins(user: current_user)
-      #  the above needs to be actually quizzes, not join model..
-
-      # tried:
-      # Quiz.joins(quizzes_users).where(user_id: 1)
-
-      @subscribed_quizzes = QuizzesUsers.where(user_id: current_user.id)
+      @subscribed_quizzes = Quiz.joins(:quizzes_users).where(quizzes_users: {user_id: current_user.id})
     end
 
     # Next up, make a way to subscribe to a quiz
