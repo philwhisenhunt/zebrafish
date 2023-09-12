@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
 
     # instead, show the specific quizzes that are available to a user
     if current_user.present?
-      @owned_quizzes = QuizzesUsers.where(user_id: current_user.id)
+      
       @subscribed_quizzes = Quiz.joins(:quizzes_users).where(quizzes_users: {user_id: current_user.id})
     end
 
