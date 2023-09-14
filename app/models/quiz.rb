@@ -16,7 +16,7 @@ class Quiz < ApplicationRecord
     end
 
     def subscribed?
-        if QuizzesUser.where(quiz: self, user: current_user).first.present?
+        if QuizzesUsers.where(quiz: self, user: @current_user).first.present?
             true
         else
             false
