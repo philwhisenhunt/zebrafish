@@ -122,7 +122,9 @@ class QuizzesController < ApplicationController
     if quizzes_user.save!
       # render success
       # or is there a way to do this with json, so that we only get the green checkmark
-      format.html { redirect_to quizzes_url, notice: "Subscribed successfully!"}
+      respond_to do |format|
+        format.html { redirect_to quizzes_url, notice: "Subscribed successfully!" }
+      end
 
     else
       # render same page with an error message
