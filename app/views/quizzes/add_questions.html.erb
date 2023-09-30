@@ -6,6 +6,10 @@
 There are currently <b><%= @quiz.prompts.count %></b> questions in this quiz
 <br>
 
+<%= turbo_frame_tag :prompt_count do %>
+    <%= @quiz.prompts.count %>
+<% end %>
+
 <p><%= link_to "Take this quiz", quiz_path(@quiz) %></p>
 <br>
 
