@@ -29,17 +29,7 @@ body {
     padding: 10px;
 }
 
-.right-side-header {
-    text-align: right;
-    max-width: 70%;
-    border: 3px solid green;
-    float: right;
 
-}
-
-.left-side-header {
-    text-align: left;
-}
 
 .trending {
     /* border: 3px solid blue; */
@@ -60,10 +50,10 @@ body {
     padding: 2px;
 }
 
-header {
-    font-size: 20px;
+.border-box-header {
+    font-size: 40px;
     text-align: center;
     padding: 30px;
     color: white;
-    background-color: brown;
+    background-color: grey;
 }

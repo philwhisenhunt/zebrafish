@@ -1,12 +1,14 @@
 <header>
+
+
+    <div class="sign-in-banner">
+        <% if user_signed_in? %>
+            <div>Welcome back</div>
+        <% else %>
+            <%= button_to "Sign in", new_user_session_path %>
+        <% end %>
+    </div>
     <div class="border-box-header"><%= link_to "ZebraFish", root_path %>
 
-        <div class="right-side-header">
-            <% if user_signed_in? %>
-                <div>Welcome back</div>
-            <% else %>
-                <%= button_to "Sign in", new_user_session_path %>
-            <% end %>
-        </div>
     </div>
 </header>
