@@ -25,3 +25,5 @@ production:
   database: zebradbuno
   username: zebradbuno
   password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
