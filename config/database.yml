@@ -5,16 +5,13 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-  host     : app-87d929d9-b061-40fa-a926-0d55414b28e6-do-user-3869416-0.c.db.ondigitalocean.com
-  port     : 25060
-  username : zebradbuno
-  password : <%= ENV["APP_DATABASE_PASSWORD"] %>
-  database : zebradbuno
-  sslmode  : require
-
+  timeout: 10000
+  host:     <%= ENV["DATABASE_HOST"] %>
+  database: <%= ENV["DATABASE_NAME"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
@@ -29,9 +26,4 @@ test:
 
 production:
   <<: *default
-  host     : app-87d929d9-b061-40fa-a926-0d55414b28e6-do-user-3869416-0.c.db.ondigitalocean.com
-  port     : 25060
-  username : zebradbuno
-  password : <%= ENV["APP_DATABASE_PASSWORD"] %>
-  database : zebradbuno
-  sslmode  : require
+
